@@ -14,6 +14,8 @@
 		3E25715723E8AA4600B46A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E25715523E8AA4600B46A4C /* LaunchScreen.storyboard */; };
 		3E25716123E9D52200B46A4C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25716023E9D52200B46A4C /* Entry.swift */; };
 		3E25716423E9E99E00B46A4C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25716323E9E99E00B46A4C /* EntryController.swift */; };
+		9E8A4C7C240ECD630016364D /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A4C7B240ECD630016364D /* EntryTableViewCell.swift */; };
+		9E8A4C7E240ED0C40016364D /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A4C7D240ED0C40016364D /* EntryListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3E25715823E8AA4600B46A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E25716023E9D52200B46A4C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		3E25716323E9E99E00B46A4C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		9E8A4C7B240ECD630016364D /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryTableViewCell.swift; path = HappinessCalculator/Controllers/EntryTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		9E8A4C7D240ED0C40016364D /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryListTableViewController.swift; path = HappinessCalculator/Controllers/EntryListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		3E040E9423EA0BDE000CC230 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E8A4C7D240ED0C40016364D /* EntryListTableViewController.swift */,
 				3E040E9923EA175A000CC230 /* SubViews */,
 			);
 			path = ViewControllers;
@@ -58,6 +63,7 @@
 		3E040E9923EA175A000CC230 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				9E8A4C7B240ECD630016364D /* EntryTableViewCell.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -198,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E25716123E9D52200B46A4C /* Entry.swift in Sources */,
+				9E8A4C7C240ECD630016364D /* EntryTableViewCell.swift in Sources */,
+				9E8A4C7E240ED0C40016364D /* EntryListTableViewController.swift in Sources */,
 				3E25714B23E8AA4200B46A4C /* AppDelegate.swift in Sources */,
 				3E25716423E9E99E00B46A4C /* EntryController.swift in Sources */,
 				3E25714D23E8AA4200B46A4C /* SceneDelegate.swift in Sources */,
@@ -343,8 +351,8 @@
 		3E25715C23E8AA4600B46A4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCL5625TDG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/HappinessCalculator/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,6 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorWalker.NotificationPatternsJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -360,8 +369,8 @@
 		3E25715D23E8AA4600B46A4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCL5625TDG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/HappinessCalculator/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,6 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TrevorWalker.NotificationPatternsJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
