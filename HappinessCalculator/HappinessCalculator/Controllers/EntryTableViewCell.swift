@@ -30,9 +30,10 @@ class EntryTableViewCell: UITableViewCell {
     func setEntry(entry: Entry, averageHappiness: Int) {
         self.entry = entry
         updateUI(averageHappiness: averageHappiness)
+        createObserver()
     }
     
-    @objc func updateUI(averageHappiness: Int) {
+    func updateUI(averageHappiness: Int) {
         guard let entry = entry else {return}
         titleLabel.text = entry.title
         isEnabledSwitch.isOn = entry.isIncluded
@@ -40,7 +41,12 @@ class EntryTableViewCell: UITableViewCell {
     }
     
     func createObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: notificationKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(recalculateHappiness), name: notificationKey, object: nil)
+    }
+    
+    @objc func recalculateHappiness(notification: NSNotification) {
+        guard let averageHappiness = notification.object as? Int else {return}
+        updateUI(averageHappiness: averageHappiness)
     }
     
     @IBAction func toggledIsIncluded(_ sender: Any) {

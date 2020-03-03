@@ -16,18 +16,14 @@ class EntryListTableViewController: UITableViewController {
         //Property Observer
         didSet {
             NotificationCenter.default.post(name: notificationKey, object: self.averageHappiness)
+            self.title = "Average Happiness: \(averageHappiness)"
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
 
     // MARK: - Table view data source
 
@@ -43,17 +39,17 @@ class EntryListTableViewController: UITableViewController {
         cell.delegate = self
         return cell
     }
-    
+
     func updateAverageHappiness() {
         var totalHappiness = 0
-        var entriesIncluded: [Entry] = []
+//        var entriesIncluded: [Entry] = []
         for entry in EntryController.entries {
             if entry.isIncluded {
                 totalHappiness += entry.happiness
-                entriesIncluded.append(entry)
+//                entriesIncluded.append(entry)
             }
         }
-        averageHappiness = totalHappiness / entriesIncluded.count
+        averageHappiness = totalHappiness / EntryController.entries.count
     }
 }
 
