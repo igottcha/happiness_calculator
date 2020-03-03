@@ -8,18 +8,25 @@
 
 import UIKit
 
+let notificationKey = Notification.Name("didChangeHappiness")
+
 class EntryListTableViewController: UITableViewController {
 
-    var averageHappiness: Int = 0
+    var averageHappiness: Int = 0 {
+        //Property Observer
+        didSet {
+            NotificationCenter.default.post(name: notificationKey, object: self.averageHappiness)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Average Happiness: \(averageHappiness)"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "Average Happiness: \(averageHappiness)"
+        
     }
 
     // MARK: - Table view data source
@@ -39,12 +46,14 @@ class EntryListTableViewController: UITableViewController {
     
     func updateAverageHappiness() {
         var totalHappiness = 0
+        var entriesIncluded: [Entry] = []
         for entry in EntryController.entries {
             if entry.isIncluded {
                 totalHappiness += entry.happiness
+                entriesIncluded.append(entry)
             }
         }
-        averageHappiness = totalHappiness / EntryController.entries.count
+        averageHappiness = totalHappiness / entriesIncluded.count
     }
 }
 
